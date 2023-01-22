@@ -15,10 +15,10 @@ The system takes the user's speech as input, converts it to text using a speech-
 git clone https://github.com/Jubbery/symai.git
 
 2. Create a virtual environment
-python3 -m venv venv
+python3 -m venv symaienv
 
 3. Activate the virtual environment
-source venv/bin/activate
+source symaienv/bin/activate
 
 4. Install the dependencies
 pip install -r requirements.txt

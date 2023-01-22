@@ -1,39 +1,15 @@
-import openai_secret_manager
+import os
+import openai
 
-# Initialize the OpenAI API client
-secrets = openai_secret_manager.get_secret("openai")
-openai.api_key = secrets["api_key"]
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
-# Define function to handle user input and generate a response using GPT-3
-def generate_response(user_input):
-    # Use the OpenAI API to generate a response
-    response = openai.Completion.create(
-        engine="text-davinci-002",
-        prompt=(f"User: {user_input}\nSYMAI: "),
-        max_tokens=2048,
-        n=1,
-        stop=None,
-        temperature=0.5,
-    )
-
-    # Extract the generated response
-    generated_response = response["choices"][0]["text"]
-
-    return generated_response
-
-# Main function to run the program
-def main():
-    while True:
-        # Get user input
-        user_input = input("You: ")
-
-        # Exit program if user types "exit"
-        if user_input.lower() == "exit":
-            break
-
-        # Generate and print the response
-        symai_response = generate_response(user_input)
-        print("SYMAI: " + symai_response)
-
-if __name__ == "__main__":
-    main()
+response = openai.Completion.create(
+  model="text-davinci-003",
+  prompt="The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: I'd like to cancel my subscription.\nAI:",
+  temperature=0.9,
+  max_tokens=150,
+  top_p=1,
+  frequency_penalty=0.0,
+  presence_penalty=0.6,
+  stop=[" Human:", " AI:"]
+)
