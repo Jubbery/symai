@@ -1,1 +1,20 @@
-src/venv/
+# .gitignore
+
+# Virtual environment
+symaienv/
+
+# Python dependencies
+*.egg-info/
+dist/
+build/
+*.egg
+*.pyc
+__pycache__/
+*.whl
+*.python3
+
+# Secret keys and tokens
+config.py
+secrets.py
+api_key.txt
+
