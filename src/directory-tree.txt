@@ -1,0 +1,26 @@
+.
+├── directory-tree.txt
+├── filename
+├── filename.txt
+└── main
+    ├── .env
+    ├── README.md
+    ├── config.py
+    ├── python
+    │   └── symai
+    │       ├── __pycache__
+    │       │   └── symai.cpython-38.pyc
+    │       ├── components
+    │       │   ├── openmic.py
+    │       │   └── whisper.py
+    │       ├── main.py
+    │       └── symai.py
+    ├── requirements.txt
+    ├── resources
+    │   └── api.py
+    └── tests
+
+7 directories, 13 files
+
+# Run this
+# tree -a -I 'symaienv' > directory-tree.txt

@@ -1,6 +1,6 @@
 import os
 import openai
-import openmic as userVoice
+import symai.src.main.python.symai.components.userVoice as userVoice
 
 # Use the openai library to set your API key
 openai.api_key = os.getenv("OPENAI_API_KEY")
